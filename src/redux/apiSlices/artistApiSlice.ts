@@ -3,7 +3,7 @@ import { baseApi } from "./baseApiSlice";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 export const artistsApi = baseApi.injectEndpoints({
-  endpoints: (builder) => ({
+  endpoints: builder => ({
     loadNextArtists: builder.query<ArtistMatches[], SearchQuery>({
       query: ({ searchTerm }) => {
         return {
@@ -18,6 +18,8 @@ export const artistsApi = baseApi.injectEndpoints({
           console.log(data);
           dispatch(displayLoader(false));
         } catch (err) {
+          // TODO log error to server
+          console.log(err);
         }
       },
       transformResponse: (response: any) => {
@@ -35,9 +37,11 @@ export const artistsApi = baseApi.injectEndpoints({
         dispatch(displayLoader(true));
         try {
           const { data } = await queryFulfilled;
-          console.log(data);
           dispatch(displayLoader(false));
-        } catch (err) {}
+        } catch (err) {
+          // TODO log error to server
+          console.log(err);
+        }
       },
       transformResponse: (response: any) => {
         return response.topalbums.album;
@@ -54,10 +58,10 @@ export const artistsApi = baseApi.injectEndpoints({
         dispatch(displayLoader(true));
         try {
           const { data } = await queryFulfilled;
-          console.log(data);
           dispatch(displayLoader(false));
         } catch (err) {
-          // `onError` side-effectd
+          // TODO log error to server
+          console.log(err);
         }
       },
       transformResponse: (response: any) => {

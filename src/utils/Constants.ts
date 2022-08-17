@@ -11,5 +11,7 @@ export const Info = {
   search: "Search",
   title: "FIND AN ARTIST",
   publishedOn: "Published on:",
-  albumTitle:(artist:string)=>{return `Top ${artist}'s Albums`},
+  albumTitle: (artist: string) => {
+    return `Top ${artist}'s Albums`;
+  },
 };

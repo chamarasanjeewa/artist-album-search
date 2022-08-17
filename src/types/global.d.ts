@@ -2,15 +2,15 @@ interface Album {
   id: number;
   name: string;
   image: ArtistImage[];
-  url:string;
+  url: string;
 }
 
 interface AlbumTrackInfo {
   name: string;
   image: ArtistImage[];
   artist: string;
-  listners:number;
-  playcount:number;
+  listners: number;
+  playcount: number;
   id: string;
   url: string;
   releaseDate: string;
@@ -19,7 +19,6 @@ interface AlbumTrackInfo {
     track: Track[];
   };
 }
-
 
 interface Track {
   name: string;

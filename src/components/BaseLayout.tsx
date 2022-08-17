@@ -45,7 +45,7 @@ const StyledFooter = styled(Footer)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.primary};
+  background-color: ${props => props.theme.primary};
   height: 10vh;
 `;
 

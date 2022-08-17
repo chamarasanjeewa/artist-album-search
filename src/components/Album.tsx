@@ -24,5 +24,5 @@ const StyledMeta = styled(Meta)`
 
 const StyledCard = styled(Card)`
   cursor: pointer;
-  background-color: ${(props) => props.theme.white};
+  background-color: ${props => props.theme.white};
 `;

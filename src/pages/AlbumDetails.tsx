@@ -29,7 +29,7 @@ export const AlbumDetails = () => {
               loading={false}
               itemLayout="horizontal"
               dataSource={data?.tracks?.track}
-              renderItem={(item) => (
+              renderItem={item => (
                 <StyledListItem>
                   <Skeleton avatar title={false} loading={false} active>
                     <List.Item.Meta
@@ -87,7 +87,7 @@ const StyledListItem = styled(List.Item)`
   padding: 0.5rem !important;
   cursor: pointer;
   &:hover {
-    background-color: ${(props) => props.theme.secondary};
+    background-color: ${props => props.theme.secondary};
   }
 `;
 
@@ -100,6 +100,6 @@ const StyledTag = styled(Tag)`
   padding: 0.225rem;
   margin-right: 0.225rem;
   &:hover {
-    background-color: ${(props) => props.theme.secondary};
+    background-color: ${props => props.theme.secondary};
   }
 `;

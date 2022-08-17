@@ -22,7 +22,7 @@ export default function SearchBar({
         onSearch={(value: string) => {
           onSearch(value);
           navigate(`/search`, {
-            state: { artistName: value?? "" },
+            state: { artistName: value ?? "" },
           });
         }}
       />

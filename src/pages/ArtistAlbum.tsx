@@ -29,7 +29,7 @@ export const Artist = () => {
           <List
             grid={{ gutter: 4, column: 4 }}
             dataSource={albums}
-            renderItem={(item) => (
+            renderItem={item => (
               <List.Item>
                 <Album
                   album={item as Album}
