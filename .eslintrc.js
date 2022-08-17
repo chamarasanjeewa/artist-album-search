@@ -27,6 +27,7 @@ module.exports = {
     "@typescript-eslint/no-non-null-assertion": "off",
     "react/prop-types": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "react/jsx-key": "off",
   },
   settings: {
     react: {
