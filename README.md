@@ -48,3 +48,6 @@ Development is done based on following components, since the assignment has not 
 - Some warnings on antd, ignored in this case
 - When using third party components its always a good practise to write a wrapper
 - Pagination must be introduced, currently top albums are selected
+
+### notes
+- Env files are commited to repo to refer. (ideally this should not be!!!)
