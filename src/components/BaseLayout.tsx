@@ -12,12 +12,7 @@ const BaseLayout = () => {
     <Layout>
       <StyledHeader>
         <div>
-          <SearchBar
-            onSearch={() => {
-              console.log("search");
-            }}
-            placeHolder={Info.searchArtist}
-          />
+          <SearchBar onSearch={() => {}} placeHolder={Info.searchArtist} />
         </div>
       </StyledHeader>
       <StyledContent>
@@ -35,8 +30,6 @@ export default BaseLayout;
 const BaseContainer = styled.div`
   padding-right: 1rem;
   padding-left: 1rem;
-  margin-right: auto;
-  margin-left: auto;
   padding-top: 1rem;
   height: 60vh;
 `;

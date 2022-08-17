@@ -1,4 +1,3 @@
-import { displayLoader } from "../slices/loaderSlice";
 import { baseApi } from "./baseApiSlice";
 
 const apiKey = process.env.REACT_APP_API_KEY;
@@ -11,17 +10,6 @@ export const artistsApi = baseApi.injectEndpoints({
         };
       },
       providesTags: ["artists"],
-      async onQueryStarted(id, { dispatch, queryFulfilled }) {
-        dispatch(displayLoader(true));
-        try {
-          const { data } = await queryFulfilled;
-          console.log(data);
-          dispatch(displayLoader(false));
-        } catch (err) {
-          // TODO log error to server
-          console.log(err);
-        }
-      },
       transformResponse: (response: any) => {
         return response.results.artistmatches.artist;
       },
@@ -33,16 +21,6 @@ export const artistsApi = baseApi.injectEndpoints({
         };
       },
       providesTags: ["albums"],
-      async onQueryStarted(id, { dispatch, queryFulfilled }) {
-        dispatch(displayLoader(true));
-        try {
-          const { data } = await queryFulfilled;
-          dispatch(displayLoader(false));
-        } catch (err) {
-          // TODO log error to server
-          console.log(err);
-        }
-      },
       transformResponse: (response: any) => {
         return response.topalbums.album;
       },
@@ -54,16 +32,6 @@ export const artistsApi = baseApi.injectEndpoints({
         };
       },
       providesTags: ["albums"],
-      async onQueryStarted(id, { dispatch, queryFulfilled }) {
-        dispatch(displayLoader(true));
-        try {
-          const { data } = await queryFulfilled;
-          dispatch(displayLoader(false));
-        } catch (err) {
-          // TODO log error to server
-          console.log(err);
-        }
-      },
       transformResponse: (response: any) => {
         return response.album;
       },

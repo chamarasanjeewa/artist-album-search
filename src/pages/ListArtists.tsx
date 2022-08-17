@@ -3,18 +3,18 @@ import { List, Skeleton, Avatar } from "antd";
 import { Errors, getArtistImageUrl } from "../utils";
 import { ErrorMessageDisplayer, Spinner } from "../components";
 import { useLoadNextArtistsQuery } from "../redux/apiSlices/artistApiSlice";
-import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
 import styled from "styled-components";
 
 export const ListArtists = () => {
   const location = useLocation();
   const { artistName } = (location.state as ArtistState) || {};
   const navigate = useNavigate();
-  const { active } = useSelector((state: RootState) => state.loadingReducer);
-  const { data, isLoading, isError } = useLoadNextArtistsQuery({
-    searchTerm: artistName,
-  });
+  const { data, isLoading, isError } = useLoadNextArtistsQuery(
+    {
+      searchTerm: artistName,
+    },
+    { skip: !artistName }
+  );
 
   const handleArtistClick = (artist: ArtistMatches) => {
     navigate(`/artist`, {
@@ -30,9 +30,8 @@ export const ListArtists = () => {
         <ErrorMessageDisplayer error={Errors.errorLoadingArtist} />
       ) : (
         <List
-          key={"dsfas"}
           grid={{ gutter: 4, column: 4 }}
-          loading={active}
+          loading={isLoading}
           itemLayout="horizontal"
           dataSource={data}
           renderItem={item => (

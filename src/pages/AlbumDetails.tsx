@@ -9,11 +9,13 @@ export const AlbumDetails = () => {
   const location = useLocation();
 
   const { artistName, albumName } = location.state as SearchAlbum;
-  console.log("inside details", artistName, " album", albumName);
-  const { data, isLoading, isError } = useLoadAlbumQuery({
-    artistName,
-    albumName,
-  });
+  const { data, isLoading, isError } = useLoadAlbumQuery(
+    {
+      artistName,
+      albumName,
+    },
+    { skip: !(artistName && albumName) }
+  );
 
   return (
     <>

@@ -3,3 +3,9 @@ export const getArtistImageUrl = (artistImage: ArtistImage | undefined) => {
   //@ts-ignore
   return artistImage?.["#text"] ?? "";
 };
+
+export enum SortBy {
+  ascending = 1,
+  descending = 2,
+  none = 3,
+}

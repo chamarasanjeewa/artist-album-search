@@ -4,13 +4,13 @@ import styled from "styled-components";
 
 const { Search } = Input;
 
-export default function SearchBar({
+const SearchBar = ({
   onSearch,
   placeHolder = "Search",
 }: {
   onSearch: (value: string) => void;
   placeHolder?: string;
-}) {
+}) => {
   const navigate = useNavigate();
   return (
     <StyledDiv>
@@ -28,7 +28,9 @@ export default function SearchBar({
       />
     </StyledDiv>
   );
-}
+};
+
+export default SearchBar;
 
 const StyledSearch = styled(Search)`
   width: 50rem;

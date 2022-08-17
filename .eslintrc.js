@@ -28,6 +28,7 @@ module.exports = {
     "react/prop-types": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "react/jsx-key": "off",
+    "@typescript-eslint/no-empty-function": "off",
   },
   settings: {
     react: {
