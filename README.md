@@ -51,3 +51,4 @@ Development is done based on following components, since the assignment has not 
 
 ### notes
 - Env files are commited to repo to refer. (ideally this should not be!!!)
+- There are some known (and unknown) bugs  :)
