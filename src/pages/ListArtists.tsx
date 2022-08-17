@@ -34,22 +34,20 @@ export const ListArtists = () => {
           grid={{ gutter: 4, column: 4 }}
           loading={active}
           itemLayout="horizontal"
-          dataSource={data?.map(x => ({ ...x, key: x.name }))}
+          dataSource={data}
           renderItem={item => (
-            <div></div>
-            // <StyledListItem
-            //   key={item.name}
-            //   onClick={() => handleArtistClick(item)}
-            //   actions={[<a href={item?.url}>More information </a>]}
-            // >
-            //   <Skeleton avatar title={false} loading={false} active>
-            //     <StyledMeta
-            //       avatar={<Avatar src={getArtistImageUrl(item?.image?.[4])} />}
-            //       title={<a href={item.url}>{item.name}</a>}
-            //       description={`Listners: ${item.listeners}`}
-            //     />
-            //   </Skeleton>
-            // </StyledListItem>
+            <StyledListItem
+              onClick={() => handleArtistClick(item)}
+              actions={[<a href={item?.url}>More information </a>]}
+            >
+              <Skeleton avatar title={false} loading={false} active>
+                <StyledMeta
+                  avatar={<Avatar src={getArtistImageUrl(item?.image?.[4])} />}
+                  title={<a href={item.url}>{item.name}</a>}
+                  description={`Listners: ${item.listeners}`}
+                />
+              </Skeleton>
+            </StyledListItem>
           )}
         />
       )}
