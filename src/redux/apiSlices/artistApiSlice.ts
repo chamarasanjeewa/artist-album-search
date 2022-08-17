@@ -18,7 +18,6 @@ export const artistsApi = baseApi.injectEndpoints({
           console.log(data);
           dispatch(displayLoader(false));
         } catch (err) {
-          // `onError` side-effect
         }
       },
       transformResponse: (response: any) => {
