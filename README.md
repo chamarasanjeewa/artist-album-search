@@ -6,6 +6,8 @@ Primary poc to work with radio.fm api to search and find details of an artist. C
 2. Click on an artist record based on search results, it will navigate to albums view
 3. Click on an album to navigate to album details view
 
+eg: type `madona` on the search bar and navigate
+
 ## Available Scripts
 
 In the project directory, you can run:
